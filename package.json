@@ -1,0 +1,11 @@
+{
+  "name": "modren_protofolio",
+  "version": "1.0.0",
+  "description": "modren protfolio with sass",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
+  },
+  "author": "kassem",
+  "license": "ISC"
+}
