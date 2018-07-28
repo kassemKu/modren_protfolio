@@ -1,0 +1,136 @@
+.menu-btn {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  z-index: 3;
+  @include easeOut;
+  align-content: center;
+  border-radius: 100%;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background-color: #FFFFFF;
+    @include easeOut;
+    display: block;
+    text-align: center;
+  }
+  // &:hover .btn-line {
+  //   background-color: $secondary-color;
+  // }
+  
+  // Rotat Into X 
+  &.close {
+    transform: rotate(180deg);
+    @include easeOut;
+
+    .btn-line {
+      // Line One Rotate
+      &:first-child {
+        transform: rotate(45deg) translate(4px, 6px);
+      }
+      // Line Tow Remove
+      &:nth-child(2) {
+        opacity: 0;
+        // display: none;
+      }
+      // Line Three Rotate
+      &:last-child {
+        transform: rotate(-45deg) translate(5px, -7px);
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: $background-opacity;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-nav, &-branding {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    float: left;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background-color: lighten($primary-color, 10);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show {
+      // Slide From Top
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
+      transform: translate3d(1200px, 0, 0);
+      @include easeOut;
+
+      &.show {
+        // Slide From right
+        transform: translate3d(0, 0, 0);
+      }
+
+      .nav-link {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 500;
+        display: inline-block;
+        padding: 1rem 0;
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+
+  }
+
+  &-branding {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(lighten($primary-color, 2), 0.5);
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.show {
+      // Slide From Bottom
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background-image: url('../img/personal.jpg');
+      background-position: center center;
+      background-size: cover;
+      border: solid 3px $secondary-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Delay Ecah Nav Item By 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
