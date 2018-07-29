@@ -1,5 +1,7 @@
 @import "config";
 @import "menu";
+@import "mobile";
+
 * {
   box-sizing: border-box;
 }
@@ -13,22 +15,6 @@ body {
   padding: 0;
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.5;
-}
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 500;
-
-  &.lg-heading {
-    font-size: 6rem;
-    font-weight: 500;
-  }
-
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem;
-    
-    background-color: rgba(lighten($primary-color, 2), 0.5);
-  }
 }
 
 li {
@@ -60,6 +46,21 @@ main {
   padding: 4rem;
   height: 100%;
 
+  h1, h2, h3 {
+    margin: 0;
+    font-weight: 500;
+  
+    &.lg-heading {
+      font-size: calc(13vw + 1px);
+      font-weight: 500;
+    }
+  
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem; 
+      background-color: rgba(lighten($primary-color, 2), 0.5);
+    }
+  }
   .icons {
     margin-top: 1rem;
 

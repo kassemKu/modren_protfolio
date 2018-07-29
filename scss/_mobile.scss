@@ -1,0 +1,72 @@
+// Wide Screen
+@include mediaXl {
+  h1.lg-heading {
+    font-size: 6rem !important;
+  }
+}
+
+// Desctops && Laptops
+@include mediaLg {
+  h1.lg-heading {
+    font-size: 6rem !important;
+  }
+}
+
+// Laptop && Small Laptops
+@include mediaMd {
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  ul.menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+
+    li > a {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  div.menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+
+    .portrait {
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+
+// Mobiles
+@include mediaSm {
+  main {
+    text-align: center;
+    align-items: center;
+
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .sm-heading {
+      font-size: 14px;
+    }
+
+    .icons > a {
+      font-size: 14px;
+    }
+    &#home h1 {
+      margin-top: 10vh;
+    }
+  }
+
+  .menu-btn {
+    top: 15px;
+    right: 15px;
+  }
+
+}

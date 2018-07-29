@@ -74,8 +74,8 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
+      width: 25vw;
+      height: 25vw;
       background-image: url("../img/personal.jpg");
       background-position: center center;
       background-size: cover;
@@ -94,6 +94,49 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (min-width: 1170px) {
+  h1.lg-heading {
+    font-size: 6rem !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  h1.lg-heading {
+    font-size: 6rem !important; } }
+
+@media screen and (max-width: 768px) {
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  ul.menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0); }
+    ul.menu-nav li > a {
+      font-size: 1.5rem !important; }
+  div.menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    div.menu-branding .portrait {
+      width: 125px;
+      height: 125px; } }
+
+@media screen and (max-width: 500px) {
+  main {
+    text-align: center;
+    align-items: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main .sm-heading {
+      font-size: 14px; }
+    main .icons > a {
+      font-size: 14px; }
+    main#home h1 {
+      margin-top: 10vh; }
+  .menu-btn {
+    top: 15px;
+    right: 15px; } }
+
 * {
   box-sizing: border-box; }
 
@@ -110,17 +153,6 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed; }
-
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 500; }
-  h1.lg-heading, h2.lg-heading, h3.lg-heading {
-    font-size: 6rem;
-    font-weight: 500; }
-  h1.sm-heading, h2.sm-heading, h3.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem;
-    background-color: rgba(73, 73, 73, 0.5); }
 
 li {
   list-style: none; }
@@ -143,6 +175,16 @@ header {
 main {
   padding: 4rem;
   height: 100%; }
+  main h1, main h2, main h3 {
+    margin: 0;
+    font-weight: 500; }
+    main h1.lg-heading, main h2.lg-heading, main h3.lg-heading {
+      font-size: calc(13vw + 1px);
+      font-weight: 500; }
+    main h1.sm-heading, main h2.sm-heading, main h3.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem;
+      background-color: rgba(73, 73, 73, 0.5); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
